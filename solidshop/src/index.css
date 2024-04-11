@@ -12,8 +12,12 @@
 
 body {
   font-family: "Rubik", sans-serif;
-  margin: 40px;
   background-color: #ddd;
+}
+
+.containe {
+  height: 100vh;
+  padding: 40px;
 }
 
 .btn {
@@ -49,8 +53,17 @@ body {
 
 .darkmode {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.3rem;
   align-items: center;
   margin-bottom: 1rem;
   cursor: pointer;
+  width: 10%;
+}
+
+.light {
+  color: white;
+}
+
+.dark {
+  background-color: #333;
 }

@@ -1,14 +1,10 @@
-import Card from "./components/Card/Card";
 import { createSignal } from "solid-js";
+import { Route, Router } from "@solidjs/router";
 import "boxicons";
+import Home from "./pages/Home";
 
 function App() {
-  const [txt, setTxt] = createSignal("Welcome To Shop");
   const [dark, setDark] = createSignal(false);
-
-  setTimeout(() => {
-    setTxt("Let's Start");
-  }, 1500);
 
   function changeMode() {
     setDark((preve) => !preve);
@@ -16,23 +12,23 @@ function App() {
   }
 
   return (
-    <div className="containe">
-      <span className="darkmode" onclick={changeMode}>
+    <div className={`containe ${dark() ? "dark" : ""}`}>
+      <span
+        className={`darkmode ${dark() ? "light" : ""}`}
+        onclick={changeMode}
+      >
         {dark() ? (
-          <box-icon name="moon" type="solid"></box-icon>
+          <box-icon name="moon" type="solid" color="#fff"></box-icon>
         ) : (
           <box-icon type="solid" name="sun"></box-icon>
         )}
         {dark() ? <p>Dark Mode</p> : <p>Light Mode</p>}
       </span>
       <div class="banner">
-        <h1>{txt()}</h1>
+        <h1>Welcome To Shop</h1>
       </div>
-      <div class="gridCard">
-        <Card title="Less Price" />
-        <Card title="Faster Shipping" />
-        <Card title="Better Quality" />
-      </div>
+
+      {/* <Route path="/" component={Home} /> */}
     </div>
   );
 }
