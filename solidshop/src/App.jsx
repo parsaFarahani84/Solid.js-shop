@@ -1,10 +1,11 @@
 import { createSignal } from "solid-js";
 import { Route, Router } from "@solidjs/router";
 import "boxicons";
+import Card from "./components/Card/Card";
 import Home from "./pages/Home";
 
 function App() {
-  const [dark, setDark] = createSignal(false);
+  const [dark, setDark] = createSignal(true);
 
   function changeMode() {
     setDark((preve) => !preve);
@@ -27,8 +28,9 @@ function App() {
       <div class="banner">
         <h1>Welcome To Shop</h1>
       </div>
-
-      {/* <Route path="/" component={Home} /> */}
+      <Router>
+        <Route path="/" component={Home} />
+      </Router>
     </div>
   );
 }

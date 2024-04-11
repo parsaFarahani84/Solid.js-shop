@@ -20,6 +20,11 @@ body {
   padding: 40px;
 }
 
+h1 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
 .btn {
   background-color: #28b485;
   padding: 0.75rem 2.5rem;
