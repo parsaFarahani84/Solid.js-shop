@@ -26,10 +26,14 @@ function Nav(props) {
           {dark() ? <p>Dark Mode</p> : <p>Light Mode</p>}
         </span>
         <span>
-          <a href="./">Home</a>
+          <a href="./" class={dark() ? "light" : ""}>
+            Home
+          </a>
         </span>
         <span>
-          <a href="./cart">Cart</a>
+          <a href="./cart" class={dark() ? "light" : ""}>
+            Cart
+          </a>
         </span>
       </nav>
       {/* -------------------------------------- */}

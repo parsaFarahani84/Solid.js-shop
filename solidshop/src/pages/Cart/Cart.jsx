@@ -1,7 +1,9 @@
-import React from "react";
-
 function Cart() {
-  return <div>Cart</div>;
+  return (
+    <div>
+      <Card title="This Is Your Card" />
+    </div>
+  );
 }
 
 export default Cart;

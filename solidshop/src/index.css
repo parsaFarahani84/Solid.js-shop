@@ -72,3 +72,8 @@ h1 {
 .dark {
   background-color: #333;
 }
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
