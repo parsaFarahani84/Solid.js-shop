@@ -1,8 +1,7 @@
 import { createSignal } from "solid-js";
-import { Route, Router } from "@solidjs/router";
+import { Route, Router, A } from "@solidjs/router";
 import "boxicons";
-import Card from "./components/Card/Card";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 
 function App() {
   const [dark, setDark] = createSignal(true);
@@ -14,17 +13,28 @@ function App() {
 
   return (
     <div className={`containe ${dark() ? "dark" : ""}`}>
-      <span
-        className={`darkmode ${dark() ? "light" : ""}`}
-        onclick={changeMode}
-      >
-        {dark() ? (
-          <box-icon name="moon" type="solid" color="#fff"></box-icon>
-        ) : (
-          <box-icon type="solid" name="sun"></box-icon>
-        )}
-        {dark() ? <p>Dark Mode</p> : <p>Light Mode</p>}
-      </span>
+      {/* -------------------------------------- */}
+
+      <nav>
+        <span
+          className={`darkmode ${dark() ? "light" : ""}`}
+          onclick={changeMode}
+        >
+          {dark() ? (
+            <box-icon name="moon" type="solid" color="#fff"></box-icon>
+          ) : (
+            <box-icon type="solid" name="sun"></box-icon>
+          )}
+          {dark() ? <p>Dark Mode</p> : <p>Light Mode</p>}
+        </span>
+        <span>
+          <A href="./">Home</A>
+        </span>
+        <span>
+          <A href="./cart">Cart</A>
+        </span>
+      </nav>
+      {/* -------------------------------------- */}
       <div class="banner">
         <h1>Welcome To Shop</h1>
       </div>
