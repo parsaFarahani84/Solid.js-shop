@@ -46,3 +46,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+.darkmode {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
