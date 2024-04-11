@@ -1,0 +1,17 @@
+.mainCard {
+  width: 90%;
+  background-color: #cacaca;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: all 0.4s;
+}
+
+.mainCard:hover {
+  transform: translateY(-0.5rem);
+}
+
+.gapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
