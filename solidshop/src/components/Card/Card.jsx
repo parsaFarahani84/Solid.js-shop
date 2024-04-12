@@ -1,6 +1,19 @@
 import styles from "./Card.module.css";
 
 function Card(props) {
+  function trimToWordLimit(text, limit) {
+    // Split the text into an array of words
+    const words = text.split(/\s+/);
+
+    // Check if the word count is greater than the limit
+    if (words.length > limit) {
+      // Return the first 'limit' words joined together plus an ellipsis
+      return words.slice(0, limit).join(" ") + "...";
+    } else {
+      // Return the original text if it's within the limit
+      return text;
+    }
+  }
   return (
     <div class={styles.mainCard}>
       <div class={styles.headerFlag}></div>
@@ -10,8 +23,8 @@ function Card(props) {
           <div class={styles.imageContainer}>
             <img class={styles.img} src={props.img} />
           </div>
-          <h1>{props.title}</h1>
-          <p>{props.des}</p>
+          <h1>{trimToWordLimit(props.title, 8)}</h1>
+          <p>{trimToWordLimit(props.des, 50)}</p>
         </div>
         <div>
           <button class="btn">{props.btn}</button>
