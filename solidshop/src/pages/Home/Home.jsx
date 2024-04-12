@@ -28,7 +28,13 @@ function Home() {
       <div class="gridCard">
         {products.map((p) => {
           return (
-            <Card title={p.title} btn="Buy" des={p.description} img={p.img} />
+            <Card
+              title={p.title}
+              btn="Buy"
+              des={p.description}
+              img={p.img}
+              id={p.id}
+            />
           );
         })}
       </div>

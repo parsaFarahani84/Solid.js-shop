@@ -1,3 +1,4 @@
+import { A } from "@solidjs/router";
 import styles from "./Card.module.css";
 
 function Card(props) {
@@ -27,7 +28,9 @@ function Card(props) {
           <p>{trimToWordLimit(props.des, 20)}</p>
         </div>
         <div>
-          <button class="btn">{props.btn}</button>
+          <A href={`/product/${props.id}`}>
+            <button class="btn">{props.btn}</button>
+          </A>
         </div>
       </div>
     </div>
