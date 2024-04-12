@@ -19,12 +19,12 @@ function Card(props) {
       <div class={styles.headerFlag}></div>
 
       <div class={styles.gapper}>
-        <div>
+        <div class={styles.container}>
           <div class={styles.imageContainer}>
-            <img class={styles.img} src={props.img} />
+            {props.img ? <img class={styles.img} src={props.img} /> : ""}
           </div>
           <h1>{trimToWordLimit(props.title, 8)}</h1>
-          <p>{trimToWordLimit(props.des, 50)}</p>
+          <p>{trimToWordLimit(props.des, 20)}</p>
         </div>
         <div>
           <button class="btn">{props.btn}</button>
