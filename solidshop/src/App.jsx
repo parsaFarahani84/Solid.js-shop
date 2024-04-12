@@ -1,7 +1,7 @@
-import { Route, Router, A } from "@solidjs/router";
+import { Route, Router } from "@solidjs/router";
 
-import Home from "./pages/Home/Home";
 import Nav from "./components/Nav";
+import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
 import TheProduct from "./pages/TheProduct/TheProduct";
 
