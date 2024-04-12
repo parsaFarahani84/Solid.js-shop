@@ -1,7 +1,11 @@
-function Cart() {
+import Card from "../../components/Card/Card";
+
+function Cart(props) {
   return (
-    <div>
-      <Card title="This Is Your Card" />
+    <div class="shopingCart">
+      <Card title="This Is Your Card" des="Nothing Here Yet" btn="Buy">
+        {props.children}
+      </Card>
     </div>
   );
 }

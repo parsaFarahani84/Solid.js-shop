@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@solidjs/router": "^0.13.2",
+    "axios": "^1.6.8",
     "boxicons": "^2.1.4",
     "react-icons": "^5.0.1",
     "solid-js": "^1.8.11"
