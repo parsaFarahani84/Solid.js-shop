@@ -54,7 +54,7 @@ h1 {
 .gridCard {
   margin-top: 2rem;
   display: grid;
-  gap: 2rem;
+  gap: 5rem;
   grid-template-columns: 1fr 1fr 1fr;
 }
 

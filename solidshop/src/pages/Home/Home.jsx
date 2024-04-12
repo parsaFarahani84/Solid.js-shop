@@ -14,7 +14,9 @@ function Home() {
     <Show when={products()} fallback={<div class="loader"></div>}>
       <div class="gridCard">
         <For each={products()}>
-          {(p) => <Card title={p.title} btn="Buy" des={p.description} />}
+          {(p) => (
+            <Card title={p.title} btn="Buy" des={p.description} img={p.image} />
+          )}
         </For>
         {console.log(products())}
       </div>

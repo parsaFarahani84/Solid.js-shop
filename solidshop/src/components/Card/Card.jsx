@@ -7,6 +7,9 @@ function Card(props) {
 
       <div class={styles.gapper}>
         <div>
+          <div class={styles.imageContainer}>
+            <img class={styles.img} src={props.img} />
+          </div>
           <h1>{props.title}</h1>
           <p>{props.des}</p>
         </div>

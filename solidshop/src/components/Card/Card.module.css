@@ -1,5 +1,5 @@
 .mainCard {
-  width: 90%;
+  width: 100%;
   background-color: #cacaca;
   padding: 1.5rem;
   border-radius: 1rem;
@@ -16,6 +16,18 @@
   height: 95%;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.img {
+  width: 7rem;
+  height: 7rem;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .gapper p {
