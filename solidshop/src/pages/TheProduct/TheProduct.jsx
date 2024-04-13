@@ -4,6 +4,7 @@ import styles from "./TheProduct.module.css";
 
 function TheProduct() {
   const params = useParams();
+
   return (
     <div>
       {data.products.map((e) => {
