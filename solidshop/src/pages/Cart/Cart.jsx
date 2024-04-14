@@ -1,27 +1,26 @@
+import { atom, useAtom } from "solid-jotai";
 import Card from "../../components/Card/Card";
-import { atom } from "solid-jotai";
 
-export const countAtom = atom([{ title: "lolo", id: Math.random() }]);
+export const atomData = atom([]);
 
 function Cart() {
-  console.log(countAtom.init);
-  return (
-    <div class="shopingCart">
-      {/* <For each={store()}>
-        {(p) => (
-          <Card title="This Is Your Card" des="Nothing Here Yet" btn="Buy">
-            <h2>Your Card</h2>
-            <p>{`Product: ${p.title} , X${p.number} , $${p.price}`}</p>
-          </Card>
-        )}
-      </For> */}
+  const [products] = useAtom(atomData);
 
-      {countAtom.init.forEach((p) => (
-        <Card title="This Is Your Card" des="Nothing Here Yet" btn="Buy">
-          <h2>Your Card</h2>
-          <p>{`Product: ${p.title} ,`}</p>
-        </Card>
-      ))}
+  return (
+    <div class="mainShopppin">
+      <div class="shoppingCart">
+        <For each={products()}>
+          {(product) => (
+            <Card title={product.title} des="" btn="Buy">
+              <div>
+                {" "}
+                <img src={product.img} />
+                <p>{` X${product.number}, $${product.price}`}</p>
+              </div>
+            </Card>
+          )}
+        </For>
+      </div>
     </div>
   );
 }

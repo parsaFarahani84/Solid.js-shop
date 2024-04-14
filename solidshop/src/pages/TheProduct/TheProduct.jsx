@@ -1,26 +1,33 @@
+import { createSignal } from "solid-js";
 import { useParams } from "@solidjs/router";
 import data from "../../../data/db.json";
 import { useAtom, atom, useSetAtom } from "solid-jotai";
 import styles from "./TheProduct.module.css";
-import { countAtom } from "../Cart/Cart";
+import { atomData } from "../Cart/Cart";
 
 function TheProduct() {
   const params = useParams();
-  const [productData, setProductData] = useAtom(countAtom);
+  const [count, setCount] = createSignal(0);
+  const [productData, setProductData] = useAtom(atomData);
 
   function addProduct(id) {
-    const selected = data.products.filter((e) => e.id === id);
-    selected.map((e) => {
-      setProductData((data) => [
-        {
-          title: e.title,
-          id: e.id,
-        },
-        // ...data,
-      ]);
+    const selected = data.products.filter((product) => product.id === id);
+    // -------------------------------------------------------------
 
-      // setProductData((data) => console.log(...data));
-    });
+    // Assuming only one product will have a unique ID
+    const productToAdd = selected[0];
+    setProductData((oldProductData) => [
+      ...oldProductData,
+      {
+        title: productToAdd.title,
+        id: productToAdd.id,
+        img: productToAdd.img,
+        price: productToAdd.price,
+        number: selected ? setCount((d) => d + 1) : count(),
+      },
+    ]);
+
+    // -------------------------------------------------------------
   }
 
   return (
