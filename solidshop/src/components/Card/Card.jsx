@@ -26,6 +26,7 @@ function Card(props) {
           </div>
           <h1>{trimToWordLimit(props.title, 8)}</h1>
           <p>{trimToWordLimit(props.des, 20)}</p>
+          <div>{props.children}</div>
         </div>
         <div>
           <A href={`/product/${props.id}`}>
