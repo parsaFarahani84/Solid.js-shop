@@ -8,8 +8,9 @@ function TheProduct() {
   const params = useParams();
   const [datas, setData] = useAtom(clicked);
 
-  const clickedFunc = function () {
-    return setData(true);
+  const clickedFunc = function (id) {
+    // console.log(id);
+    return setData(id);
   };
 
   return (
@@ -24,7 +25,7 @@ function TheProduct() {
               <div class={styles.right}>
                 <h1>{e.title}</h1>
                 <p>{e.description}</p>
-                <button onclick={() => clickedFunc()} class="btn">
+                <button onclick={() => clickedFunc(e.id)} class="btn">
                   Order
                 </button>
               </div>

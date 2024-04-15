@@ -2,7 +2,7 @@ import { atom, useAtom } from "solid-jotai";
 import Card from "../../components/Card/Card";
 import data from "../../../data/db.json";
 
-export const clicked = atom(false);
+export const clicked = atom(0);
 
 function Cart() {
   const [clickedPro] = useAtom(clicked);
