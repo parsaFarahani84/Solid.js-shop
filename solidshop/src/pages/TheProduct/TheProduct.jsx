@@ -1,38 +1,16 @@
-import { createSignal } from "solid-js";
 import { useParams } from "@solidjs/router";
-import data from "../../../data/db.json";
-import { useAtom, atom, useSetAtom } from "solid-jotai";
+import { useAtom } from "solid-jotai";
 import styles from "./TheProduct.module.css";
-import { atomData } from "../Cart/Cart";
+import { clicked } from "../Cart/Cart";
+import data from "../../../data/db.json";
 
 function TheProduct() {
   const params = useParams();
-  const [count, setCount] = createSignal(0);
-  const [productData, setProductData] = useAtom(atomData);
+  const [datas, setData] = useAtom(clicked);
 
-  function addProduct(id) {
-    const selected = data.products.filter((product) => product.id === id);
-    // -------------------------------------------------------------
-
-    // Assuming only one product will have a unique ID
-    const productToAdd = selected[0];
-
-    if (count() >= 1) {
-      console.log("lolo");
-    } else {
-      setProductData((oldProductData) => [
-        ...oldProductData,
-        {
-          title: productToAdd.title,
-          id: productToAdd.id,
-          img: productToAdd.img,
-          price: productToAdd.price,
-          number: selected ? setCount((d) => d + 1) : count(),
-        },
-      ]);
-    }
-    // -------------------------------------------------------------
-  }
+  const clickedFunc = function () {
+    return setData(true);
+  };
 
   return (
     <div>
@@ -46,7 +24,7 @@ function TheProduct() {
               <div class={styles.right}>
                 <h1>{e.title}</h1>
                 <p>{e.description}</p>
-                <button onclick={() => addProduct(e.id)} class="btn">
+                <button onclick={() => clickedFunc()} class="btn">
                   Order
                 </button>
               </div>
