@@ -9,7 +9,6 @@ function TheProduct() {
   const [datas, setData] = useAtom(clicked);
 
   const clickedFunc = function (id) {
-    // console.log(id);
     return setData(id);
   };
 
