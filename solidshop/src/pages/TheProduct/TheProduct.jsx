@@ -16,17 +16,21 @@ function TheProduct() {
 
     // Assuming only one product will have a unique ID
     const productToAdd = selected[0];
-    setProductData((oldProductData) => [
-      ...oldProductData,
-      {
-        title: productToAdd.title,
-        id: productToAdd.id,
-        img: productToAdd.img,
-        price: productToAdd.price,
-        number: selected ? setCount((d) => d + 1) : count(),
-      },
-    ]);
 
+    if (count() >= 1) {
+      console.log("lolo");
+    } else {
+      setProductData((oldProductData) => [
+        ...oldProductData,
+        {
+          title: productToAdd.title,
+          id: productToAdd.id,
+          img: productToAdd.img,
+          price: productToAdd.price,
+          number: selected ? setCount((d) => d + 1) : count(),
+        },
+      ]);
+    }
     // -------------------------------------------------------------
   }
 
