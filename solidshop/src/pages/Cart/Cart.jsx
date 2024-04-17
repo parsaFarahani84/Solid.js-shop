@@ -1,6 +1,5 @@
 import { useAtom } from "solid-jotai";
 import Card from "../../components/Card/Card";
-import { createSignal } from "solid-js";
 import { datastore } from "../../../data/DataStore";
 
 function Cart() {
