@@ -1,11 +1,8 @@
-import { useAtom } from "solid-jotai";
 import Card from "../../components/Card/Card";
 
-import { dataStore, setDataStore } from "../../store/dataStorage";
+import { dataStore } from "../../store/dataStorage";
 
 function Cart() {
-  // const [ProductClicked] = useAtom(datastore);
-
   return (
     <div class="mainShopppin">
       <div class="shoppingCart">
