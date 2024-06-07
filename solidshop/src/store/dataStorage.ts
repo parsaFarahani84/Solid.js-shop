@@ -1,4 +1,4 @@
-import { reload } from "@solidjs/router";
+import { list } from "postcss";
 import { createStore } from "solid-js/store";
 
 type MyData = {
@@ -10,12 +10,12 @@ type MyData = {
   img: string;
 };
 
-export const [dataStore, setDataStore] = createStore<MyData[]>([]);
-
-type ReLoad = {
-  ReLoad: boolean;
+type State = {
+  list: MyData[];
+  update: number;
 };
 
-export let [reredndering, setRerendering] = createStore<ReLoad>({
-  ReLoad: false,
+export const [dataStore, setDataStore] = createStore<State>({
+  list: [],
+  update: 0,
 });

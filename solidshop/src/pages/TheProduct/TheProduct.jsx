@@ -3,7 +3,6 @@ import styles from "./TheProduct.module.css";
 import data from "../../../data/db.json";
 import { createSignal } from "solid-js";
 import { dataStore, setDataStore } from "../../store/dataStorage";
-import { reredndering, setRerendering } from "../../store/dataStorage";
 
 function TheProduct() {
   const params = useParams();
@@ -11,16 +10,12 @@ function TheProduct() {
   const [numberOf, setNumberOf] = createSignal(0);
 
   function addProduct(id, number) {
+    console.log(dataStore.list);
+
     const selectedProduct = data.products.find((e) => e.id === id);
-    const productIndex = dataStore.findIndex((e) => e.id === id);
+    const productIndex = dataStore.list.findIndex((e) => e.id === id);
 
     setNumberOf((e) => e + 1);
-    // ---------------------------------
-    setRerendering({
-      ReLoad: true,
-    });
-    console.log(reredndering.ReLoad);
-    // ---------------------------------
 
     if (productIndex !== -1) {
       setDataStore((prev) => {
